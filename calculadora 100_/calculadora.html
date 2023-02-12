@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    input {
+        background-color: rgb(58, 56, 56);
+        color: #fff;
+        padding: 20px;
+        margin: 03px;
+        width: 45px;
+        border-color: #fff;
+        border-radius: 10px;
+    }
+    
+    
+    .tudo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: black;
+        padding: 20px;
+        padding-top: 50px;
+        border-radius: 10px;
+        font-size: 30px;
+    }
+    .resu{
+        background-color: #fff;
+        width: 207px;
+        margin: 5px;
+        height: 35px;
+        border-radius: 5px;
+        text-align: right;
+        padding-right: 10px;
+        margin-bottom: 15px;
+        
+    }
+    body{
+        background-color: rgb(0, 194, 145);
+        text-align: center;
+        padding-left: 556px;
+        height: 30px;
+    }
+    h1{
+        height: 40px;
+        width: 25%;
+        padding: 20px;
+        padding-bottom: 0.2%;
+        padding-top: 0.9%;
+        border-radius: 05px;
+    }
+    p{
+        color: rgb(0, 0, 0);
+    }
+</style>
+<body>
+    
+    
+    <div" class="tudo">
+    <p class="resu" id="resu"></p>
+    </div>
+    <div>
+        <tr><input type="button" value="C" onclick="clean()"></tr>
+        <tr><input type="button" value="X" onclick="insert('*')"></tr>
+        <tr><input type="button" value="-" onclick="insert('-')"></tr>
+        <tr><input type="button" value="%" onclick="insert('/')"></tr>
+        
+    <div>
+    <div>
+        <tr><input type="button" value="0" onclick="insert('0')"></tr>
+        <tr><input type="button" value="1" onclick="insert('1')"></tr>
+        <tr><input type="button" value="2" onclick="insert('2')"></tr>
+        <tr><input type="button" value="+" onclick="insert('+')"></tr>
+    </div>
+    <div>
+        <tr><input type="button" value="3" onclick="insert('3')"></tr>
+        <tr><input type="button" value="4" onclick="insert('4')"></tr>
+        <tr><input type="button" value="5" onclick="insert('5')"></tr>
+        <tr><input type="button" value="." onclick="insert('.')"></tr>
+        
+    </div>
+    <div>
+        <tr><input type="button" value="6" onclick="insert('6')"></tr>
+        <tr><input type="button" value="7" onclick="insert('7')"></tr>
+        <tr><input type="button" value="8" onclick="insert('8')"></tr>
+        <td><input type="button" value="del" onclick="back()"></td>
+    </div>
+    <div>
+        <tr><input type="button" value="9" onclick="insert('9')"></tr>
+        <tr><input style="width: 71.5%;" type="button" value="=" onclick="calcular()"></tr>
+    </div>
+</div>
+</body>
+<script>
+    function insert(num){
+      var numero =  document.getElementById('resu').innerHTML 
+      document.getElementById('resu').innerHTML = numero + num;
+    }
+    function clean(){
+        document.getElementById('resu').innerHTML ='';
+    }
+
+    function back(){
+        var resu = document.getElementById('resu').innerHTML;
+        document.getElementById('resu').innerHTML = resu.substring(0, resu.length -1);
+    }
+    function calcular(){
+        var resu = document.getElementById('resu').innerHTML;
+        if (resu){
+            document.getElementById('resu').innerHTML = eval(resu);
+        }
+    }
+    
+    
+</script>
+<!-- 1) falta consertar o bang da tela crecer de mais quando digita um numero -->
+
+<!--entender como cada linha fuciona -->
+<!--o que é cada elemnto e como é usado na ordem que é usado e com tem que ser usado-->
+
+</html>
